@@ -1,0 +1,26 @@
+{{ if and .Values.upload.enabled -}}
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ .Values.upload.name }}
+  labels:
+    app: {{ template "nfs-provisioner.fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+    type: {{ .Values.type }}
+    role: {{ .Values.role }}
+    app.kubernetes.io/name: {{ template "nfs-provisioner.fullname" . }}
+    app.kubernetes.io/instance: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    app.kubernetes.io/version: "{{ .Chart.Version }}"
+    app.kubernetes.io/part-of: {{ .Values.type }}
+    app.kubernetes.io/component: {{ .Values.role }}
+    app.kubernetes.io/managed-by: "helm"
+spec:
+  accessModes:
+    - {{ .Values.upload.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.upload.size | quote }}
+  storageClassName: {{ (index .Values "nfs-server-provisioner").storageClass.name }}
+{{- end }}

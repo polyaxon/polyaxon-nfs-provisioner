@@ -1,0 +1,45 @@
+logs:
+  name: "polyaxon-pvc-logs"
+  accessMode: ReadWriteMany
+  mountPath: "/logs"
+  size: 5Gi
+  enabled: true
+
+repos:
+  name: "polyaxon-pvc-repos"
+  accessMode: ReadWriteMany
+  mountPath: "/repos"
+  size: 10Gi
+  enabled: false
+
+upload:
+  name: "polyaxon-pvc-upload"
+  accessMode: ReadWriteMany
+  mountPath: "/upload"
+  size: 10Gi
+  enabled: false
+
+data:
+  name: "polyaxon-pvc-data"
+  accessMode: ReadWriteMany
+  mountPath: "/data"
+  size: 10Gi
+  enabled: false
+
+outputs:
+  name: "polyaxon-pvc-outputs"
+  mountPath: "/outputs"
+  accessMode: ReadWriteMany
+  size: 10Gi
+  enabled: true
+
+
+nfs-server-provisioner:
+  storageClass:
+    name: "polyaxon-nfs"
+
+  # For more detail on how to customize the nfs server provisioner,
+  # please look at this ref: https://github.com/helm/charts/tree/master/stable/nfs-server-provisioner
+
+type: "polyaxon-integration"
+role: "polyaxon-stores"
