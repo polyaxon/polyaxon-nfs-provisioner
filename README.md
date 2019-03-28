@@ -15,7 +15,7 @@ By default the volumes are disabled, and the chart can be used to create as many
 
 ### Setup Helm
 
-To install the TFJob operator make sure you have helm installed, please see this [guide](https://docs.polyaxon.com/guides/setup-helm/).
+To install the nfs-provisioner, make sure you have helm installed, please see this [guide](https://docs.polyaxon.com/guides/setup-helm/).
 
 ### Namespace
 
