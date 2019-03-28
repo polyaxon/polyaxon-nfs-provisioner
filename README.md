@@ -106,7 +106,6 @@ logs:
 | --------------------- | ------------------------------------------------- | ----------------------------------------------------------
 | `logs.name`           | Name of the PVC to create                         | `polyaxon-pvc-logs`
 | `logs.size`           | Size of data volume                               | `5Gi`
-| `logs.mountPath`      | Path to mount the volume at, to use other image   | `/logs`
 | `logs.accessMode`     | Use volume as ReadOnly or ReadWrite ReadWriteOnce | `ReadWriteMany`
 
 
@@ -122,7 +121,6 @@ repos:
 | ---------------------- | ------------------------------------------------- | ----------------------------------------------------------
 | `repos.name`           | Name of the PVC to create                         | `polyaxon-pvc-repos`
 | `repos.size`           | Size of data volume                               | `10Gi`
-| `repos.mountPath`      | Path to mount the volume at, to use other image   | `/repos`
 | `repos.accessMode`     | Use volume as ReadOnly or ReadWrite ReadWriteOnce | `ReadWriteMany`
 
 
@@ -138,7 +136,6 @@ upload:
 | ----------------------- | ------------------------------------------------- | ----------------------------------------------------------
 | `upload.name`           | Name of the PVC to create                         | `polyaxon-pvc-upload`
 | `upload.size`           | Size of data volume                               | `50Gi`
-| `upload.mountPath`      | Path to mount the volume at, to use other image   | `/upload`
 | `upload.accessMode`     | Use volume as ReadOnly or ReadWrite ReadWriteOnce | `ReadWriteMany`
 
 
@@ -154,7 +151,6 @@ data:
 | --------------------- | ------------------------------------------------- | ----------------------------------------------------------
 | `data.name`           | Name of the PVC to create                         | `polyaxon-pvc-data`
 | `data.size`           | Size of data volume                               | `10Gi`
-| `data.mountPath`      | Path to mount the volume at, to use other image   | `/data`
 | `data.accessMode`     | Use volume as ReadOnly or ReadWrite ReadWriteOnce | `ReadWriteMany`
 
 
@@ -170,5 +166,4 @@ outputs:
 | ------------------------ | ------------------------------------------------- | ----------------------------------------------------------
 | `outputs.name`           | Name of the PVC to create                         | `polyaxon-pvc-outputs`
 | `outputs.size`           | Size of data volume                               | `10Gi`
-| `outputs.mountPath`      | Path to mount the volume at, to use other image   | `/outputs`
 | `outputs.accessMode`     | Use volume as ReadOnly or ReadWrite ReadWriteOnce | `ReadWriteMany`
