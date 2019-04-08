@@ -40,7 +40,7 @@ $ helm repo update
 ### Install the nfs provisioner
 
 ```bash
-helm install polyaxon/nfs-provisione --name=plxnfs --namespace=polyaxon
+helm install polyaxon/nfs-provisioner --name=plxnfs --namespace=polyaxon
 ```
 
 
