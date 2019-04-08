@@ -3,7 +3,7 @@ logs:
   accessMode: ReadWriteMany
   mountPath: "/logs"
   size: 5Gi
-  enabled: true
+  enabled: false
 
 repos:
   name: "polyaxon-pvc-repos"
@@ -31,7 +31,7 @@ outputs:
   mountPath: "/outputs"
   accessMode: ReadWriteMany
   size: 10Gi
-  enabled: true
+  enabled: false
 
 
 nfs-server-provisioner:
