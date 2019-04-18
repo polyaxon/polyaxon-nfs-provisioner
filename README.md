@@ -71,6 +71,16 @@ You can also enable only one or some of the volumes.
 
 > N.B.2 The chart will create a provisioner with a `storageClass` named: `polyaxon-nfs`.
 
+### Customize the nfs provisioner
+
+To customize the nfs provisioner take a look at the [available configuration options](https://github.com/helm/charts/tree/master/stable/nfs-server-provisioner#configuration). E.g.:
+
+```yaml
+nfs-server-provisioner:
+  storageClass:
+    reclaimPolicy: Retain
+```  
+
 ## Creating other volumes than those provided in values
 
 You can create as many volumes as you once the provisioner is deployed on your cluster, you just need to provide a PVC name, storage size, and an access Mode:
