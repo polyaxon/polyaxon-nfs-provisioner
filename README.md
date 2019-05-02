@@ -11,6 +11,8 @@ The chart provides the possibility to easily create 5 volumes: `data`, `outputs`
 
 By default the volumes are disabled, and the chart can be used to create as many volumes.
 
+> **Warning**: While installing in the default configuration will work, any data stored on the dynamic volumes provisioned by this chart will not be persistent!
+
 ## Install
 
 ### Setup Helm
@@ -42,7 +44,6 @@ $ helm repo update
 ```bash
 helm install polyaxon/nfs-provisioner --name=plxnfs --namespace=polyaxon
 ```
-
 
 ## Configuration
 
@@ -77,6 +78,10 @@ To customize the nfs provisioner take a look at the [available configuration opt
 
 ```yaml
 nfs-server-provisioner:
+  persistence:
+    enabled: true
+    storageClass: standard
+    size: 100Gi
   storageClass:
     reclaimPolicy: Retain
 ```  
