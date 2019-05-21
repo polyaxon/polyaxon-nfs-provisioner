@@ -1,7 +1,7 @@
 apiVersion: v1
 description: Polyaxon in-cluster NFS provisioner to simplify the creation of ReadWriteMany and ReadOnlyMany volumes.
 name: nfs-provisioner
-version: 0.4.0
+version: 0.4.1
 keywords:
   - deep learning
   - a.i.
